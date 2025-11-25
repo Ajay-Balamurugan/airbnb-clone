@@ -49,4 +49,8 @@ public class JWTUtility {
     private boolean isTokenExpired(String token) {
         return extractClaims(token).getExpiration().before(new Date());
     }
+    
+    public Date getExpirationTime(String token) {
+        return extractClaims(token).getExpiration();
+    }
 }
